@@ -12,4 +12,7 @@ script:
   - docker -v && docker-compose -v
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker-compose -f ./docker-compose-build.yaml build
-  - docker-compose push
+  - docker push harvey99/udagram-frontend:lastest
+  - docker push harvey99/udagram-api-feed:lastest
+  - docker push harvey99/udagram-api-user:lastest
+  - docker push harvey99/reverseproxy:lastest
