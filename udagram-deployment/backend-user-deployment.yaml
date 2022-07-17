@@ -15,7 +15,7 @@ spec:
         app: backend-user
     spec:
       containers:
-      - image: harvey99/udagram-api-user:lastest
+      - image: harvey99/udagram-api-user:v1
         name: backend-user 
         imagePullPolicy: Always  
         resources:
@@ -25,37 +25,11 @@ spec:
           limits:
             memory: "1024Mi"
             cpu: "500m"      
-        env:
-        - name: URL
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: URL 
-        - name: JWT_SECRET
-          valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: JWT_SECRET
-        - name: POSTGRESS_DB
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: POSTGRESS_DB
-        - name: POSTGRESS_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: env-config
-              key: POSTGRESS_HOST
-        - name: POSTGRESS_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: POSTGRESS_PASSWORD
-        - name: POSTGRESS_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: POSTGRESS_USERNAME
+        envFrom:
+        - configMapRef:
+            name: env-config
+        - secretRef:
+            name: env-secret
         volumeMounts:
         - name: aws-secret
           mountPath: "/root/.aws/"
