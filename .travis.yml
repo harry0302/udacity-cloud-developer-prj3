@@ -12,3 +12,4 @@ script:
   - docker -v && docker-compose -v
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker-compose -f ./docker-compose-build.yaml build --push
+  - docker-compose push
