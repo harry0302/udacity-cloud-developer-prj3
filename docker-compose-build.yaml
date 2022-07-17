@@ -3,18 +3,18 @@ services:
   reverseproxy:
     build:
       context: ./udagram-reverseproxy
-    image: harvey99/reverseproxy:latest
+    image: harvey99/reverseproxy:lastest
   backend_user:
     build:
       context: ./udagram-api-user
-    image: harvey99/udagram-api-user:latest
+    image: harvey99/udagram-api-user:lastest
   backend_feed:
     build:
       context: ./udagram-api-feed
-    image: harvey99/udagram-api-feed:latest
+    image: harvey99/udagram-api-feed:lastest
   frontend:
     build:
       context: ./udagram-frontend
       args:
         - BUILD_ENV=production
-    image: harvey99/udagram-frontend:latest
+    image: harvey99/udagram-frontend:lastest
