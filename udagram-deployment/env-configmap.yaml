@@ -5,8 +5,8 @@ data:
   AWS_PROFILE: default
   AWS_REGION: us-east-1
   POSTGRES_DB: postgres
-  POSTGRES_HOST: prj3.cty4bhr3xqmn.us-east-1.rds.amazonaws.com
-  URL: http://a6487adf9e7624f3e847aa6ce1008fed-2117225093.us-east-1.elb.amazonaws.coms  
+  POSTGRES_HOST: database.cty4bhr3xqmn.us-east-1.rds.amazonaws.com
+  URL: http://localhost:8100  
 metadata:
   name: env-config
   namespace: default
